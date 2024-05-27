@@ -9,10 +9,7 @@ var max_rotation = 0.8
 var speed_rotation = 0.07
 var screen_limits = Vector3(48, 0, 62)
 
-func _ready():
-	pass
-
-func _process(delta):
+func move(ship, delta):
 	var input_dir = Vector3.ZERO
 
 	if Input.is_action_pressed("ui_left"):
@@ -40,10 +37,10 @@ func _process(delta):
 	if current_rotation > max_rotation: current_rotation = max_rotation
 	if current_rotation < -max_rotation: current_rotation = -max_rotation
 	
-	rotation.z = current_rotation
-	position += velocity * delta
+	ship.rotation.z = current_rotation
+	ship.position += velocity * delta
 	
-	if position.x > screen_limits.x: position.x = screen_limits.x
-	if position.x < -screen_limits.x: position.x = -screen_limits.x
-	if position.z > screen_limits.z: position.z = screen_limits.z
-	if position.z < -screen_limits.z: position.z = -screen_limits.z
+	if ship.position.x > screen_limits.x: ship.position.x = screen_limits.x
+	if ship.position.x < -screen_limits.x: ship.position.x = -screen_limits.x
+	if ship.position.z > screen_limits.z: ship.position.z = screen_limits.z
+	if ship.position.z < -screen_limits.z: ship.position.z = -screen_limits.z

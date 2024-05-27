@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cio7p75lmv23a"]
+
+[ext_resource type="PackedScene" uid="uid://uwxxw0tlegse" path="res://enemies/enemy1.gltf" id="1_q0iui"]
+[ext_resource type="Script" path="res://enemies/enemy.gd" id="2_05qcr"]
+
+[node name="Enemy1" type="Node3D"]
+
+[node name="enemy1" parent="." instance=ExtResource("1_q0iui")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("2_05qcr")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="enemy1"]
+
+[connection signal="screen_exited" from="enemy1/VisibleOnScreenNotifier3D" to="enemy1" method="_on_visible_on_screen_notifier_3d_screen_exited"]
