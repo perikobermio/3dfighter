@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh55ejnb51wee"]
+
+[ext_resource type="PackedScene" uid="uid://chfx2oa33t1cp" path="res://ship/Executioner.gltf" id="1_36s3c"]
+[ext_resource type="Script" path="res://ship/move.gd" id="2_21u0a"]
+
+[sub_resource type="Environment" id="Environment_k5msm"]
+background_mode = 1
+background_color = Color(0.728822, 0.728822, 0.728822, 1)
+
+[node name="game" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 90, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k5msm")
+
+[node name="Executioner2" parent="." instance=ExtResource("1_36s3c")]
+script = ExtResource("2_21u0a")
