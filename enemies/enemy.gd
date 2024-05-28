@@ -1,7 +1,7 @@
 extends Node3D
 
 var speed = 10
-var explosion = load("res://enemies/explosion.tscn")
+var explosion = load("res://resources/explosion.tscn")
 
 func _process(delta):
 	position.z -= speed * delta

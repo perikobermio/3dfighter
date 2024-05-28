@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvsx4mrm3ak4v"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_62fv3"]
+
+[sub_resource type="FontFile" id="FontFile_kpgj0"]
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/64/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vjpcp"]
+font = SubResource("FontFile_kpgj0")
+font_size = 64
+font_color = Color(1, 0.342006, 0.317588, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_deoy3"]
+font_size = 64
+
+[node name="hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_62fv3")
+
+[node name="score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 4.0
+offset_right = 713.0
+offset_bottom = 83.0
+text = "0000"
+label_settings = SubResource("LabelSettings_vjpcp")
+
+[node name="message" type="Label" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 368.0
+offset_right = 696.0
+offset_bottom = 547.0
+text = "3D fighter Yeah!"
+label_settings = SubResource("LabelSettings_deoy3")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 788.0
+offset_right = 415.0
+offset_bottom = 884.0
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
