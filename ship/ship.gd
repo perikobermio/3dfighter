@@ -10,3 +10,11 @@ func _ready():
 func _process(delta):
 	move.move(self, delta)
 	shoot.shoot(game, self, delta)
+
+func destroy():
+	queue_free()
+	
+func _on_ship_body_area_entered(area):
+	if area.name == 'enemy_body':
+		destroy()
+		area.get_parent().destroy()

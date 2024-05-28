@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://bu5piaagufxv0"]
+[gd_scene load_steps=4 format=3 uid="uid://bu5piaagufxv0"]
+
+[ext_resource type="PackedScene" uid="uid://chfx2oa33t1cp" path="res://ship/Executioner.gltf" id="1_y6bdw"]
+[ext_resource type="Script" path="res://ship/ship.gd" id="2_occon"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o8kng"]
+size = Vector3(1, 1, 1.39795)
 
 [node name="Ship" type="Node3D"]
+
+[node name="Executioner2" parent="." instance=ExtResource("1_y6bdw")]
+script = ExtResource("2_occon")
+
+[node name="ship_body" type="Area3D" parent="Executioner2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Executioner2/ship_body"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 7, 0, 0, 1.39282)
+shape = SubResource("BoxShape3D_o8kng")
+
+[connection signal="area_entered" from="Executioner2/ship_body" to="Executioner2" method="_on_ship_body_area_entered"]

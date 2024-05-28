@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bh55ejnb51wee"]
+[gd_scene load_steps=4 format=3 uid="uid://bh55ejnb51wee"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_2tq4b"]
-[ext_resource type="PackedScene" uid="uid://chfx2oa33t1cp" path="res://ship/Executioner.gltf" id="1_36s3c"]
-[ext_resource type="Script" path="res://ship/ship.gd" id="2_vpqck"]
+[ext_resource type="PackedScene" uid="uid://bu5piaagufxv0" path="res://ship/ship.tscn" id="4_4824u"]
 
 [sub_resource type="Environment" id="Environment_k5msm"]
 background_mode = 1
@@ -19,5 +18,4 @@ transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.7422
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_k5msm")
 
-[node name="ship" parent="." instance=ExtResource("1_36s3c")]
-script = ExtResource("2_vpqck")
+[node name="ship" parent="." instance=ExtResource("4_4824u")]
