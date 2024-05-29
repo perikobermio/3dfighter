@@ -17,4 +17,7 @@ script = ExtResource("2_occon")
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 7, 0, 0, 1.39282)
 shape = SubResource("BoxShape3D_o8kng")
 
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Executioner2"]
+
 [connection signal="area_entered" from="Executioner2/ship_body" to="Executioner2" method="_on_ship_body_area_entered"]
+[connection signal="screen_exited" from="Executioner2/VisibleOnScreenNotifier3D" to="Executioner2" method="_on_visible_on_screen_notifier_3d_screen_exited"]

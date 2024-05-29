@@ -7,7 +7,8 @@ var deceleration = 1500.0
 var current_rotation = 0.0
 var max_rotation = 0.8
 var speed_rotation = 0.07
-var screen_limits = Vector3(48, 0, 62)
+#var screen_limits = Vector3(48, 0, 62)
+var screen_limits = Vector3(90, 0, 120)
 
 func move(ship, delta):
 	var input_dir = Vector3.ZERO
